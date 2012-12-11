@@ -153,7 +153,7 @@ public class Singular {
 
         NativeBlas.cgesvd('S', 'S', m, n, A.dup().data, 0, m, S.data, 0, U.data, 0, m, V.data, 0, min(m, n), rwork, 0);
 
-        return new ComplexFloatMatrix[]{U, new ComplexFloatMatrix(S), V.transpose()};
+        return new ComplexFloatMatrix[]{U, new ComplexFloatMatrix(S), V.hermitian()};
     }
 
     /**
